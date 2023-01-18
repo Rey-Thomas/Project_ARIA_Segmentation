@@ -1,0 +1,21 @@
+Le pitch a été choisi = 1/10 comme dans le code matlab c'est 10 le factor en pixel/mm et le pitch c'est l'inverse
+
+GROSSE REMARQUE:
+
+On peut avoir l'impression que la labélisation avec le stl n'est pas parfaite, mais en fait c'est uniquement du à l'endroit d'où 
+la lumière du rouleau viens. La lumière créée une ombre, qui donne l'impression que la labélisation est mauvaise mais en réalité c'est juste l'ombre.
+Pour vérifier cela il suffit de regarder deux labélisation de couche qui se suivent et à ce moment la on viens qu'une parait bonne et l'autre non.
+
+Le training doit donc être pas mal influencé par le côté où le rouleau. On peut maybe donnée cette information en entrée afin que peut être cela aide le modèle.
+Ou alors on peut "grossir" la labélisation d'un certain nombre pour avoir les contours.
+
+Je pense donc pas utilisé le mask matlab pour faire une union ou une intersection, mais bien juste pour donner un score sur la labélisation.
+
+
+Proposition Quinsat:
+
+Juste l'entraîner avec des images pair ou impair, pour ne pas avoir le problème d'ombre
+ 
+
+Aussi au vu de la correction différentes pour le buil 428, cela est peut être aussi du au fait que la correction de la machine
+a été changé entre temps, donc la correction du centre de lasage n'est plus la même
